@@ -8,30 +8,31 @@ output: github_document
 # Problem 1
 
 * a random sample of size 10 from a standard Normal distribution
-```{r}
+```{r randome sample}
 set.seed(1)
-samp_1 <- rnorm(10)
-samp_1
+samp <- rnorm(10)
+samp
 ```
 
 * a logical vector indicating whether elements of the sample are greater than 0
-```{r}
-samp_2 <- samp_1 > 0
-samp_2
+```{r logical vector}
+log_vec <- samp > 0
+log_vec
 ```
 
 * a character vector of length 10
-```{r}
-samp_3 <- c("This", "is", "a", "data", "science", "class", "please", "bring", 
+```{r character vector}
+char_vec <- c("This", "is", "a", "data", "science", "class", "please", "bring", 
             "your", "computer")
-samp_3
-is.character(samp_3)
-length(samp_3)
+char_vec
+is.character(char_vec)
+length(char_vec)
 ```
 
 * a factor vector of length 10, with 3 different factor “levels”
-```{r}
-samp_2 <- samp_1 > 0
+```{r factor vector}
+factor_vec <- factor(c(1,1,2,3,3,2,3,1,3,2))
+factor_vec
 ```
 
 # Problem 2
