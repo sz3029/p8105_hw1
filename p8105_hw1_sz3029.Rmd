@@ -1,0 +1,18 @@
+---
+title: "P8105 HW1"
+author: Shihui Zhu
+date: 2021-09-21
+output: github_document
+---
+
+# Problem 1
+
+```{r}
+samp = rnorm(100)
+length(samp)
+```
+
+# Problem 2
+
+I can take the mean of the sample, too!
+The mean is `r mean(samp)`.
