@@ -31,17 +31,55 @@ factor_vec <- factor(c(1,1,2,3,3,2,3,1,3,2))
 ```
 
 
-```{r}
+```{r dataframe}
 df <- data.frame(samp, log_vec, char_vec, factor_vec)
 df
 ```
 
 ## Take mean of each variable
-```{r}
-
+```{r packages, results ='hide', message = FALSE}
+library(tidyverse)
 ```
 
-# Problem 2
+```{r mean, collapse=TRUE}
+# Mean of random sample
+mean(dplyr::pull(df, 1))
+# Mean of logical vector
+mean(dplyr::pull(df, 2))
+# Mean of char vector
+mean(dplyr::pull(df, 3))
+# Mean of factor vector
+mean(dplyr::pull(df, 4))
+```
 
-I can take the mean of the sample, too!
-The mean is `r mean(samp)`.
+The calculation for the mean of the first (randome sample of 10 from a standard normal distribution) and second variable (logical vector) works. For 
+character vector and factor vector, it does not work. 
+
+## Convert Variables
+```{r convert, results='hide', warning=FALSE}
+as.numeric(log_vec)
+as.numeric(char_vec)
+as.numeric(factor_vec)
+```
+
+There is a warning message showing for the character vector, saying NAs 
+introduced by coercion. The characters do not have meanings in numeric values, 
+therefore they cannot be converted to numbers, and such coercion makes R 
+assign null values to them. This explains the null value I got when I tried to 
+take the mean of it. 
+
+# Problem 2
+```{r load_data}
+data("penguins", package = "palmerpenguins")
+```
+## Description
+```{r describe}
+# summary of the dataset
+summary(penguins)
+# names of variables
+names(penguins)
+# number of rows
+nrow(penguins)
+# number of cols
+ncol(penguins)
+```
