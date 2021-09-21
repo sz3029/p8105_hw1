@@ -73,13 +73,21 @@ take the mean of it.
 data("penguins", package = "palmerpenguins")
 ```
 ## Description
+* Summary of the dataset
 ```{r describe}
 # summary of the dataset
 summary(penguins)
-# names of variables
+
+```
+* Variable names
+```{r}
 names(penguins)
-# number of rows
+```
+* Number of rows
+```{r}
 nrow(penguins)
-# number of cols
+```
+* Number of cols
+```{r}
 ncol(penguins)
 ```
