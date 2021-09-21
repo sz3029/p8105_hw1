@@ -73,21 +73,26 @@ take the mean of it.
 data("penguins", package = "palmerpenguins")
 ```
 ## Description
-* Summary of the dataset
-```{r describe}
-# summary of the dataset
+* Dataset values summary and variable names
+```{r describe, collapse=TRUE}
 summary(penguins)
-
-```
-* Variable names
-```{r}
 names(penguins)
 ```
-* Number of rows
-```{r}
+* Size of the dataset
+```{r, collapse=TRUE}
+# number of rows
 nrow(penguins)
-```
-* Number of cols
-```{r}
+# number of cols
 ncol(penguins)
+```
+* Mean flipper length
+```{r}
+# Remove the NA values
+mean(dplyr::pull(penguins, "flipper_length_mm"), na.rm = TRUE)
+```
+
+## Plots
+```{r}
+ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = species)) + geom_point() + xlab("Bill Length (mm)") + ylab("Flipper Length (mm)") + ggtitle("Scatter Plot of Flipper Length v.s. Bill Length")
+ggsave("hw1_p2_scatter_plot.jpg")
 ```
