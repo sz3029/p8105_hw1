@@ -86,13 +86,13 @@ nrow(penguins)
 ncol(penguins)
 ```
 * Mean flipper length
-```{r}
+```{r flipper_mean}
 # Remove the NA values
 mean(dplyr::pull(penguins, "flipper_length_mm"), na.rm = TRUE)
 ```
 
 ## Plots
-```{r}
+```{r plot, warning=FALSE}
 ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = species)) + geom_point() + xlab("Bill Length (mm)") + ylab("Flipper Length (mm)") + ggtitle("Scatter Plot of Flipper Length v.s. Bill Length")
 ggsave("hw1_p2_scatter_plot.jpg")
 ```
