@@ -9,6 +9,7 @@ output: github_document
 
 * a random sample of size 10 from a standard Normal distribution
 ```{r}
+set.seed(1)
 samp_1 <- rnorm(10)
 samp_1
 ```
@@ -24,7 +25,7 @@ samp_2
 samp_3 <- c("This", "is", "a", "data", "science", "class", "please", "bring", 
             "your", "computer")
 samp_3
-is.chracter(samp_3)
+is.character(samp_3)
 length(samp_3)
 ```
 
