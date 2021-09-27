@@ -52,7 +52,7 @@ mean(dplyr::pull(df, 3))
 mean(dplyr::pull(df, 4))
 ```
 
-The calculation for the mean of the first (randome sample of 10 from a standard normal distribution) and second variable (logical vector) works. For 
+The calculation for the mean of the first (random sample of 10 from a standard normal distribution) and second variable (logical vector) works. For 
 character vector and factor vector, it does not work. 
 
 ## Convert Variables
@@ -74,22 +74,8 @@ data("penguins", package = "palmerpenguins")
 ```
 ## Description
 * Dataset values summary and variable names
-```{r describe, collapse=TRUE}
-summary(penguins)
-names(penguins)
-```
-* Size of the dataset
-```{r, collapse=TRUE}
-# number of rows
-nrow(penguins)
-# number of cols
-ncol(penguins)
-```
-* Mean flipper length
-```{r flipper_mean}
-# Remove the NA values
-mean(dplyr::pull(penguins, "flipper_length_mm"), na.rm = TRUE)
-```
+
+The penguins dataset consist of 8 different categories, `r names(penguins)`. There are `r nrow(penguins)` rows and `r ncol(penguins)` columns. The mean flipper length of the penguins is `r mean(dplyr::pull(penguins, "flipper_length_mm"), na.rm = TRUE)`.
 
 ## Plots
 ```{r plot, warning=FALSE}
