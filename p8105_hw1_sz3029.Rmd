@@ -75,7 +75,7 @@ data("penguins", package = "palmerpenguins")
 ## Description
 * Dataset values summary and variable names
 
-The penguins dataset consist of 8 different categories, `r names(penguins)`. There are `r nrow(penguins)` rows and `r ncol(penguins)` columns. The mean flipper length of the penguins is `r mean(dplyr::pull(penguins, "flipper_length_mm"), na.rm = TRUE)`.
+The penguins dataset consist of 8 different categories, `r names(penguins)`. There are `r nrow(penguins)` rows and `r ncol(penguins)` columns. The mean flipper length of the penguins is `r mean(dplyr::pull(penguins, "flipper_length_mm"), na.rm = TRUE)` mm.
 
 ## Plots
 ```{r plot, warning=FALSE}
