@@ -33,7 +33,7 @@ factor_vec <- factor(
   )
 ```
 
-
+Create the dataframe
 ```{r dataframe}
 df <- data.frame(samp, log_vec, char_vec, factor_vec)
 df
@@ -41,6 +41,7 @@ df
 
 ## Take mean of each variable
 ```{r packages, results ='hide', message = FALSE}
+# Load package
 library(tidyverse)
 ```
 
@@ -60,10 +61,10 @@ character vector and factor vector, it does not work.
 
 ## Convert Variables
 ```{r convert, eval=FALSE}
-as.numeric(samp)
-as.numeric(log_vec)
-as.numeric(char_vec)
-as.numeric(factor_vec)
+as.numeric(samp) # random vector to numeric
+as.numeric(log_vec) # logical vector to numeric
+as.numeric(char_vec) # character vector to numeric
+as.numeric(factor_vec) # factor vector to numeric
 ```
 
 There is a warning message showing for the character vector, saying NAs 
@@ -82,6 +83,7 @@ The `as.numeric()` function converts whatever data type to double, therefore:
 This explains the NA's I got when I tried to take the mean of character vector and factor vector, since `mean()` only takes numeric values. 
 
 # Problem 2
+## Load Dataset
 ```{r load_data, message=FALSE}
 data("penguins", package = "palmerpenguins")
 ```
